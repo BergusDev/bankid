@@ -175,6 +175,11 @@ type AuthOptions struct {
 	// systems’ IP address may be used.
 	EndUserIp string `json:"endUserIp"`
 
+	// Optional: URL to return to after the authentication is completed. Orders started on the same device as where the 
+	// user's BankID is stored (started with autostart token) will call this URL when the order is completed. Any return 
+	// URL provided in the start URL when the BankID app was launched will be ignored. 
+	ReturnUrl string `json:"returnUrl,omitempty"`
+
 	// Optional: Text displayed to the user during authentication with BankID, with the purpose of providing context for
 	// the authentication and to enable users to detect identification errors and averting fraud attempts. The text can
 	// be formatted using CR, LF and CRLF for new lines. The text must be encoded as UTF-8 and then base 64 encoded.
@@ -244,6 +249,11 @@ type SignOptions struct {
 	// not available, for instance in voice-based services. In these cases, the internal representation of those
 	// systems’ IP address may be used.
 	EndUserIp string `json:"endUserIp"`
+
+	// Optional: URL to return to after the authentication is completed. Orders started on the same device as where the 
+	// user's BankID is stored (started with autostart token) will call this URL when the order is completed. Any return 
+	// URL provided in the start URL when the BankID app was launched will be ignored. 
+	ReturnUrl string `json:"returnUrl,omitempty"`
 
 	// Required: Text to be displayed to the user. String. The text can be formatted using CR, LF and CRLF for new
 	// lines. The text must be encoded as UTF-8 and then base 64 encoded. 1 – 40,000 characters after base 64 encoding.
