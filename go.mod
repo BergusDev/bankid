@@ -1,4 +1,4 @@
-module github.com/Kansuler/bankid
+module github.com/bergusdev/bankid
 
 go 1.20
 
